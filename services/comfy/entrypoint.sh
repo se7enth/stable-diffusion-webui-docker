@@ -10,6 +10,14 @@ MOUNTS["/root/.cache"]="/data/.cache"
 MOUNTS["${ROOT}/input"]="/data/config/comfy/input"
 MOUNTS["${ROOT}/output"]="/output/comfy"
 
+
+# MOUNTS["${ROOT}/custom_nodes"]="/data/config/comfy/custom_nodes"
+# MOUNTS["${ROOT}/models"]="/data/models"
+
+# add r-
+# RUN --mount=type=cache,target=/root/.cache/pip \
+#   pip install ifnude favcore mediapipe numba omegaconf insightface ftfy
+
 for to_path in "${!MOUNTS[@]}"; do
   set -Eeuo pipefail
   from_path="${MOUNTS[${to_path}]}"
