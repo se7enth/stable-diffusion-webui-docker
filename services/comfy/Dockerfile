@@ -38,7 +38,7 @@ RUN chmod u+x /docker/entrypoint.sh
 RUN cp /docker/extra_model_paths.yaml ${ROOT}
 
 ENV NVIDIA_VISIBLE_DEVICES=all
-ENV PYTHONPATH="${PYTHONPATH}:${PWD}" CLI_ARGS=""
-EXPOSE 7860
+ENV PYTHONPATH="${PYTHONPATH}:${PWD}" CLI_ARGS="--preview-method auto"
+EXPOSE 8860
 ENTRYPOINT ["/docker/entrypoint.sh"]
-CMD python -u main.py --listen --port 7860 ${CLI_ARGS}
+CMD python -u main.py --listen --port 8860 ${CLI_ARGS}
