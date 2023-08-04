@@ -4,3 +4,7 @@
 # VSCode specific
 *.code-workspace
 /.vscode
+
+# volume
+data/
+output/
